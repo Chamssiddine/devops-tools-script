@@ -102,6 +102,8 @@ sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates gnupg curl sudo
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.asc] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get update && sudo apt-get install google-cloud-cli -y
+gcloud components install gke-gcloud-auth-plugin
+
 echo "Google Cloud SDK installed successfully."
 echo "------------------------------------------"
 
@@ -193,12 +195,9 @@ sudo apt install terminator
 # rm -rf Ora*
 echo CLEANING UP...
 
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-
+export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)  
 # echo install terminal 
 
 # touch ~/.zshrc
