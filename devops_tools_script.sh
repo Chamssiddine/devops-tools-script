@@ -2,7 +2,10 @@
 echo "Installing Docker..."
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
- sudo apt-get install docker-compose-plugin
+sudo apt-get install docker-compose-plugin
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
 echo "Docker & docker compose installed successfully."
 echo "-----------------------------------v-------"
 
