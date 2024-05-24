@@ -102,7 +102,7 @@ echo "------------------------------------------"
 
 echo "Installing Google Cloud SDK..."
 sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates gnupg curl sudo
+sudo apt-get install apt-transport-https ca-certificates gnupg curl sudo -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.asc] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get update && sudo apt-get install google-cloud-cli -y
 gcloud components install gke-gcloud-auth-plugin
